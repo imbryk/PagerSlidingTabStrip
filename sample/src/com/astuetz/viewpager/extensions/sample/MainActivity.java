@@ -35,6 +35,7 @@ import android.view.MenuItem;
 import android.view.View;
 
 import com.astuetz.viewpager.extensions.PagerSlidingTabStrip;
+import com.imbryk.viewPager.LoopViewPager;
 
 public class MainActivity extends FragmentActivity {
 
@@ -194,6 +195,7 @@ public class MainActivity extends FragmentActivity {
 
 		@Override
 		public Fragment getItem(int position) {
+			position = LoopViewPager.toRealPosition(position, getCount());
 			return SuperAwesomeCardFragment.newInstance(position);
 		}
 
